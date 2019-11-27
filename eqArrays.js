@@ -13,6 +13,8 @@ let eqArrays = function (a,b) {
       if (a[i] !== b[i]) {return false}
     };
     return result
+  } else {
+    return false
   }
 };
 

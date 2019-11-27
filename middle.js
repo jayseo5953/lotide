@@ -1,15 +1,14 @@
-let eqArrays = function(a,b) {
-  if (a.length === b.length) {
+let eqArrays = function (a,b) {
+  if (a.length===b.length) {
     let result = true;
     for (let i = 0; i < a.length; i++) {
-      if (a[i] !== b[i]) {
-        return false;
-      }
-    }
-    return result;
+      if (a[i] !== b[i]) {return false}
+    };
+    return result
+  } else {
+    return false
   }
 };
-
 let assertArraysEqual = function(q,p) {
   if (eqArrays(q,p) === true) {
     console.log(`Assertion Passed: ${q} === ${p}`);
@@ -38,4 +37,4 @@ let assertMiddle = function(inputArry,outputArray) {
   assertArraysEqual(middle(inputArry),outputArray);
 };
 
-assertMiddle([1,2,3,4],[2,3]);
+assertMiddle([1,2,3,4,5],[3,5]);
