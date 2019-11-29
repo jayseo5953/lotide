@@ -18,18 +18,28 @@ let assertArraysEqual = function (q,p) {
   }
 };
 
+// my solution #1
 
-const takeUntil = (array, callback) => {
-  let result = [];
-  let i = 0;
-  let arrayOfTF= array.map(callback)
-  while (!arrayOfTF[i]) {result.push(array[i]); i++} 
-  return result;
-  
-};
+// const takeUntil = (array, callback) => {
+//   let result = [];
+//   let i = 0;
+//   let arrayOfTF= array.map(callback)
+//   while (!arrayOfTF[i]) {result.push(array[i]); i++} 
+//   return result;
+// };
 
-function ha (arr) {
-  return arr[0] <0
+// function ha (arr) {
+//   return arr[0] <0
+// }
+
+
+// my solution #2
+
+const takeUntil = function(array, callback) {
+  let candidates = array.filter(callback);
+  let target = candidates[0];
+  let index = array.indexOf(target);
+  return array.slice(0,index)
 }
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
